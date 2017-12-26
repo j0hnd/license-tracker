@@ -14,5 +14,5 @@
 </div>
 
 <div class="message-send-report-container-error alert alert-danger hidden">
-    <strong>Error!</strong> Missing emaiil address!<br>
+    <strong>Error!</strong> <span id="message-wrapper"></span> <br>
 </div>

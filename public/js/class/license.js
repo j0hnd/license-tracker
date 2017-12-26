@@ -93,6 +93,7 @@ $(document).ready(function() {
                     }, 3000);
                 } else {
                     $('.message-send-report-container-error').removeClass('hidden');
+                    $('#message-wrapper').text(response.message);
                     setTimeout(function() {
                         $('.message-send-report-container-error').addClass('hidden');
                     }, 3000);

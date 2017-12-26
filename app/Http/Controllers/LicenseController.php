@@ -133,6 +133,13 @@ class LicenseController extends Controller
                     return response()->json($response);
                 }
 
+                if (filter_var($form['email'], FILTER_VALIDATE_EMAIL) == false) {
+                    $response['message'] = "Invalid email address format";
+
+                    return response()->json($response);
+                }
+
+
                 $licenses_raw = States::get_licenses();
 
                 $licenses = null;
