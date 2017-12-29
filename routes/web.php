@@ -15,9 +15,20 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'LicenseController@index');
-Route::get('/license/reload/list', 'LicenseController@reload');
-Route::post('/send-report', 'LicenseController@send_report');
+Route::get('/', 'Auth\LoginController@login');
+Route::get('/logout', 'Auth\LoginController@logout');
+
+Route::match(['GET', 'POST'], '/login', 'Auth\LoginController@login')->name('login');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/licenses', 'LicenseController@index');
+    Route::get('/license/reload/list', 'LicenseController@reload');
+
+    Route::post('/send-report', 'LicenseController@send_report');
+
+    Route::match(['post', 'put'], '/license/update', 'LicenseController@update_license');
+
+});
+
 // Route::post('/license/update', 'LicenseController@update_license');
-Route::match(['post', 'put'], '/license/update', 'LicenseController@update_license');
 // Route::resource('licenses','LicenseController');

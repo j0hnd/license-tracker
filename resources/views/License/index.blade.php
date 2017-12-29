@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('main-content')
+<div class="row">
+    <div class="col-md-12 text-right padding-right10">
+        <a href="{{ url('/logout') }}">Logout</a>
+    </div>
+</div>
 <div class="row padding-top10">
     <div class="col-md-8">
         <div class="row">
