@@ -12,9 +12,10 @@ class DefaultUserSeeder extends Seeder
     public function run()
     {
         $default = [
-            'email'         => 'admin',
+            'email'         => 'admin@default.com',
             'password'      => \Hash::make('adm1n'),
             'name'          => 'Admin',
+            'is_visible'    => 0,
             'created_at'    => date('Y-m-d H:i:s'),
             'updated_at'    => date('Y-m-d H:i:s')
         ];

@@ -9,7 +9,7 @@
         <form action="{{ url('/login') }}" method="post">
             <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email">
             </div>
 
             <div class="form-group">
